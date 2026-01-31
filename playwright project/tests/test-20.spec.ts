@@ -1,0 +1,11 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  // Recording...
+  await page.goto('https://www.swifttranslator.com/');
+  await page.getByRole('textbox', { name: 'Input Your Singlish Text Here.' }).click();
+  await page.getByRole('textbox', { name: 'Input Your Singlish Text Here.' }).fill('mama eeka kohomahari karannam.');
+  await page.getByRole('textbox', { name: 'Input Your Singlish Text Here.' }).click();
+  
+  await page.getByText('මම ඒක කොහොමහරි කරන්නම්').click();
+});
